@@ -1,18 +1,18 @@
-#include <iostream>
-#include "WriteDiary.h"
+﻿#include "WriteDiary.h"
 using namespace std;
 
 void WriteDiary::Write() {
 	system("cls");
-	ofstream out("test.txt");
-	string write;
-	string fin;
+	//string diary;
+	string diaryName;
+	FILE* diary;
+	ofstream input;
 
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-	for (int i = 0; i < 5; i++) {
-		cin >> write;
-		out << write << endl;
-	}
-	out.close();
+	cout << "일기 제목을 입력하세요 (15자 이내) → ";
+	getline(cin, diaryName);
+	
+	input.open(diaryName.c_str());
+	input << "Hello";
+	input.close();
 	
 }
