@@ -6,6 +6,10 @@ void WriteDiary::Write() {
 	string diaryName;
 	FILE* diary;
 	ofstream input;
+	time_t curr_time;
+	struct tm* curr_tm;
+	curr_time = time(NULL);
+	curr_tm = localtime(&curr_time);
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 	cout << "일기 제목을 입력하세요"<<endl;
@@ -15,8 +19,9 @@ void WriteDiary::Write() {
 	input.open(diaryName);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 	cout << "일기의 내용을 입력하세요." << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); //
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); 
 	
+	cout << curr_tm->tm_year + 1900 << "년 " << curr_tm->tm_mon + 1 << "일 " << curr_tm->tm_mday << "일" << endl;
 
 	
 }
