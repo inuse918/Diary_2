@@ -2,9 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include <Windows.h>
-#include <iomanip>
 #include <string>
-#include <fstream>
+#include <ctime>
 using namespace std;
 
 class WriteDiary {

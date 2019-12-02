@@ -1,5 +1,4 @@
-ï»¿#include "WriteDiary.h"
-using namespace std;
+#include "WriteDiary.h"
 
 void WriteDiary::Write() {
 	system("cls");
@@ -8,11 +7,16 @@ void WriteDiary::Write() {
 	FILE* diary;
 	ofstream input;
 
-	cout << "ì¼ê¸° ì œëª©ì„ ìž…ë ¥í•˜ì„¸ìš” (15ìž ì´ë‚´) â†’ ";
-	getline(cin, diaryName);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+	cout << "ÀÏ±â Á¦¸ñÀ» ÀÔ·ÂÇÏ¼¼¿ä"<<endl;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+	cin >> diaryName;
+	diaryName.append(".txt");
+	input.open(diaryName);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
+	cout << "ÀÏ±âÀÇ ³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä." << endl;
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	
-	input.open(diaryName.c_str());
-	input << "Hello";
-	input.close();
+
 	
 }
