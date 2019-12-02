@@ -6,6 +6,9 @@
 #include "LoadDiary.h"
 using namespace std;
 
+void mn() {
+
+}
 int main() 
 {
 	Menu menu = Menu(50,1);

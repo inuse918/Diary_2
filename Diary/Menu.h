@@ -13,23 +13,14 @@ class Menu {
 
 	public:
 		Menu(int x, int y); //»ý¼ºÀÚ
-		/**
-		*
-		*/
 		void MovePosition(int x, int y);
-		/**
-		*
-		*/
+		
 		void PrintMenu();
-		/**
-		* 
-		*/
+		void LPrintMenu();
 		int GetSelectedMenu();
-
-		/**
-		*
-		*/
 		void RecieveMenu();
+		int LGetSelectedMenu();
+		void LRecieveMenu();
 
 };
 
