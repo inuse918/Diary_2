@@ -6,6 +6,7 @@
 #include <string.h>
 #include "Menu.h"
 #include "Main.h"
+#include "LoadDiary_func.h"
 using namespace std;
 
 class LoadDiary {

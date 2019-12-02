@@ -3,6 +3,7 @@
 void LoadDiary:: SelectMenu() {
 	Menu menu = Menu(60, 0);
 	Main main = Main();
+	LoadDiary_func ldf = LoadDiary_func();
 	menu.LPrintMenu();
 	menu.LRecieveMenu();
 	LoadDiary loaddiary;
@@ -18,7 +19,7 @@ void LoadDiary:: SelectMenu() {
 		{
 		case 1:
 			if (!isWatchDiary) {
-				//writediary.Write();
+				ldf.WatchDiary();
 				isWatchDiary = TRUE;
 			}
 			break;
@@ -30,7 +31,7 @@ void LoadDiary:: SelectMenu() {
 			break;
 		case 3:
 			if (!isDeleteDiary) {
-				//help.PrintHelp();
+				ldf.DeleteDiary();
 				isDeleteDiary = TRUE;
 			}
 			break;
@@ -52,15 +53,24 @@ void LoadDiary:: SelectMenu() {
 
 void LoadDiary::Load(){
 	system("cls");
+	Main main = Main();
 	_finddata_t fd;
 	long handle;
 	int result=0;
 	handle = _findfirst(".\\*.txt", &fd);  // .txt 파일을 찾는다.
+	char ch;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 	
 	if (handle == -1) {
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 		cout << "일기가 존재하지 않습니다!" << endl;
+		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+		cout << "메인 화면으로 돌아가려면 아무 키나 누르세요." << endl;
+		ch = _getch();
+		if (ch != 0) {
+			system("cls");
+			main.printMain();
+		}
 		return;
 	}
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
