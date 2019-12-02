@@ -3,6 +3,7 @@
 #include "Menu.h"
 #include "Help.h"
 #include "WriteDiary.h"
+#include "LoadDiary.h"
 using namespace std;
 
 int main() 
@@ -10,9 +11,11 @@ int main()
 	Menu menu = Menu(50,1);
 	Help help;
 	WriteDiary writediary;
+	LoadDiary loaddiary;
 	bool isRun = TRUE;
 	bool isPrintHelp = FALSE;
 	bool isWriteDiary = FALSE;
+	bool isLoadDiary = FALSE;
 	menu.PrintMenu();
 	menu.RecieveMenu();
 
@@ -27,6 +30,10 @@ int main()
 			}
 			break;
 		case 2:
+			if (!isLoadDiary) {
+				loaddiary.Load();
+				isLoadDiary = TRUE;
+			}
 			break;
 		case 3:
 			if (!isPrintHelp) {

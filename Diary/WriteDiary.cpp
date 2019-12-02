@@ -20,7 +20,7 @@ void WriteDiary::Write() {
 	diaryName.append(".txt");
 	input.open(diaryName);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
-	cout << "일기의 내용을 입력하세요." << endl;
+	cout << "\n일기의 내용을 입력하세요.\n(날짜는 시스템 시간에 맞추어 자동으로 입력됩니다.)" << endl;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); 
 	//날짜 입력
 	input << curr_tm->tm_year + 1900 << "년 " << curr_tm->tm_mon + 1 << "일 " << curr_tm->tm_mday << "일" << endl;
