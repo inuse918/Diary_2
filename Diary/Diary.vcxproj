@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="LoadDiary.cpp" />
+    <ClCompile Include="LoadDiary_func.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="WriteDiary.cpp" />
@@ -28,6 +29,8 @@
   <ItemGroup>
     <ClInclude Include="Help.h" />
     <ClInclude Include="LoadDiary.h" />
+    <ClInclude Include="LoadDiary_func.h" />
+    <ClInclude Include="Main.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="WriteDiary.h" />
   </ItemGroup>

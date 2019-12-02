@@ -1,17 +1,7 @@
-#include <iostream>
-#include <Windows.h>
-#include "Menu.h"
-#include "Help.h"
-#include "WriteDiary.h"
-#include "LoadDiary.h"
-using namespace std;
+#include "Main.h"
 
-void mn() {
-
-}
-int main() 
-{
-	Menu menu = Menu(50,1);
+void Main::printMain() {
+	Menu menu = Menu(50, 1);
 	Help help;
 	WriteDiary writediary;
 	LoadDiary loaddiary;
@@ -55,5 +45,10 @@ int main()
 			break;
 		}
 	}
-	
+
+}
+int main() 
+{
+	Main main = Main();
+	main.printMain();
 }

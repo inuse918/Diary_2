@@ -5,14 +5,11 @@
 #include <Windows.h>
 #include <string.h>
 #include "Menu.h"
+#include "Main.h"
 using namespace std;
 
 class LoadDiary {
 public:
 	void Load();
-	void MovePosition(int x, int y);
 	void SelectMenu();
-	void DeleteDiary();
-	void ModificateDiary();
-	void WatchDiary();
 };

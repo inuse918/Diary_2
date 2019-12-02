@@ -1,7 +1,4 @@
-#include <iostream>
-#include <Windows.h>
-#include "Menu.h"
-using namespace std;
+#include "Main.h"
 
 Menu::Menu(int x, int y) {
 	MovePosition(x, y);

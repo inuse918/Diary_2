@@ -6,6 +6,7 @@
 #include <string>
 #include <ctime>
 #include <vector>
+#include "Main.h"
 using namespace std;
 
 class WriteDiary {

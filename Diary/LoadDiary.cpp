@@ -1,18 +1,8 @@
 #include "LoadDiary.h"
 
-void LoadDiary::MovePosition(int x, int y)
-{
-	COORD coord;
-	coord.X = x;
-	coord.Y = y;
-	SetConsoleCursorPosition(
-		GetStdHandle(STD_OUTPUT_HANDLE),
-		coord
-	);
-}
-
 void LoadDiary:: SelectMenu() {
 	Menu menu = Menu(60, 0);
+	Main main = Main();
 	menu.LPrintMenu();
 	menu.LRecieveMenu();
 	LoadDiary loaddiary;
@@ -46,7 +36,8 @@ void LoadDiary:: SelectMenu() {
 			break;
 		case 4:
 			if (!isBackToMain) {
-
+				system("cls");
+				main.printMain();
 			}
 		}
 		if (!isRun) {
