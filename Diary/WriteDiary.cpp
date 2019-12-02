@@ -15,7 +15,7 @@ void WriteDiary::Write() {
 	input.open(diaryName);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
 	cout << "일기의 내용을 입력하세요." << endl;
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); //
 	
 
 	
