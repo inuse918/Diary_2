@@ -2,7 +2,6 @@
 
 void WriteDiary::Write() {
 	system("cls");
-	//string diary;
 	string diaryName;
 	Main main = Main();
 	ofstream input;
@@ -16,14 +15,9 @@ void WriteDiary::Write() {
 	string line;
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
-	cout << "일기 제목을 입력하세요(30자 이내)"<<endl;
+	cout << "일기 제목을 입력하세요(30자 이내): ";
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-	while (1) {
-		getline(cin, diaryName);  
-		ch = _getch();
-		if (ch== 13)
-			break;
-	}
+	cin >> diaryName;
 	diaryName.append(".txt");
 	input.open(diaryName);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
@@ -34,12 +28,11 @@ void WriteDiary::Write() {
 	input << curr_tm->tm_year + 1900 << "년 " << curr_tm->tm_mon + 1 << "일 " << curr_tm->tm_mday << "일" << endl;
 	
 	while (1) {
-		getline(cin, line);  //화면 입력을 line 변수에 담는다. 
-		if (line.compare("<end>") == 0) //line 변수가 end 과 같다면 빠져나온다.
+		getline(cin, line);  
+		if (line.compare("<end>") == 0) 
 			break;
-		content.push_back(line); //동적배열(vector)맨뒤에 문자열을 추가한다.
+		content.push_back(line); 
 	}
-    //벡터에 저장된 모든 문자열을 루프(반복자를 이용해서)돌면서 파일에 기록한다. 
 	vector<string>::iterator iter;
 	for (iter = content.begin(); iter != content.end(); ++iter) {
 		input << *iter << endl;

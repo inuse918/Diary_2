@@ -3,6 +3,7 @@
 Menu::Menu(int x, int y) {
 	MovePosition(x, y);
 }
+Menu::Menu() {}
 void Menu::MovePosition(int x, int y)
 {
 	COORD coord;

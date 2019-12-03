@@ -13,6 +13,7 @@ class Menu {
 
 	public:
 		Menu(int x, int y); //»ı¼ºÀÚ
+		Menu();
 		void MovePosition(int x, int y);
 		
 		void PrintMenu();

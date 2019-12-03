@@ -3,10 +3,10 @@
 
 string diaryName;
 ofstream input;
-Main main = Main();
+
 char ch;
 void LoadDiary_func::DeleteDiary() {
-	
+	Main main = Main();
 	system("cls");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	cout << "일기를 삭제합니다." << endl;
@@ -17,7 +17,6 @@ void LoadDiary_func::DeleteDiary() {
 	cin >> diaryName;
 	diaryName.append(".txt");
 
-	
 	if (remove(diaryName.c_str())) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 		cout <<"존재하지 않는 파일입니다. 삭제를 실패하였습니다." << endl;
@@ -38,6 +37,7 @@ void LoadDiary_func::ModifyDiary() {
 	
 }
 void LoadDiary_func::WatchDiary() {
+	Main main = Main();
 	string content;
 	system("cls");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
