@@ -36,12 +36,11 @@ void LoadDiary_func::ModifyDiary() {
 	ofstream out;
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
-	cout << "수정하고 싶은 일기 제목을 확장자 없이 입력해주세요." << endl;
+	std::cout << "수정하고 싶은 일기 제목을 확장자 없이 입력해주세요." << endl;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 	cin >> diaryName;
 	diaryName.append(".txt");
-	out.open(diaryName, ios::app);
-	
+	//out.open(diaryName, ios::app);
 
 	out.close();
 }
