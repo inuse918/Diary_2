@@ -6,10 +6,10 @@ void LoadDiary:: SelectMenu() {
 	LoadDiary_func ldf = LoadDiary_func();
 	menu.LPrintMenu();
 	menu.LRecieveMenu();
-	LoadDiary loaddiary;
+//	LoadDiary loaddiary;
 	bool isRun = TRUE;
 	bool isWatchDiary = FALSE;
-	bool isModificateDiary = FALSE;
+	bool isModifyDiary = FALSE;
 	bool isDeleteDiary = FALSE;
 	bool isBackToMain = FALSE;
 
@@ -24,9 +24,9 @@ void LoadDiary:: SelectMenu() {
 			}
 			break;
 		case 2:
-			if (!isModificateDiary) {
-				loaddiary.Load();
-				isModificateDiary = TRUE;
+			if (!isModifyDiary) {
+				ldf.ModifyDiary();
+				isModifyDiary = TRUE;
 			}
 			break;
 		case 3:

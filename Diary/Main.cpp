@@ -42,7 +42,7 @@ void Main::printMain() {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 			menu.MovePosition(45, 15);
 			cout << "프로그램을 종료합니다." << endl;
-			break;
+			exit(0);
 		}
 	}
 

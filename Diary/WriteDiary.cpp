@@ -16,9 +16,14 @@ void WriteDiary::Write() {
 	string line;
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
-	cout << "일기 제목을 입력하세요"<<endl;
+	cout << "일기 제목을 입력하세요(30자 이내)"<<endl;
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-	cin >> diaryName;
+	while (1) {
+		getline(cin, diaryName);  
+		ch = _getch();
+		if (ch== 13)
+			break;
+	}
 	diaryName.append(".txt");
 	input.open(diaryName);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
@@ -27,7 +32,6 @@ void WriteDiary::Write() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7); 
 	//날짜 입력
 	input << curr_tm->tm_year + 1900 << "년 " << curr_tm->tm_mon + 1 << "일 " << curr_tm->tm_mday << "일" << endl;
-	
 	
 	while (1) {
 		getline(cin, line);  //화면 입력을 line 변수에 담는다. 

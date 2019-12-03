@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <Windows.h>
+#include "Main.h"
 using namespace std;
 
 class Help {
