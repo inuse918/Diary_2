@@ -40,6 +40,7 @@ void WriteDiary::Write() {
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	cout << "\n\n일기 저장 완료" <<endl;
+	input.close();
 	cout << "메인 화면으로 돌아가려면 아무 키나 누르세요." << endl;
 	ch = _getch();
 	if (ch != 0) {
