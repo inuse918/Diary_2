@@ -10,7 +10,6 @@ void WriteDiary::Write() {
 	curr_time = time(NULL);
 	curr_tm = localtime(&curr_time);
 	char ch;
-
 	vector<string> content;
 	string line;
 

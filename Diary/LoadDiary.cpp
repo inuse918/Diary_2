@@ -40,13 +40,19 @@ void LoadDiary:: SelectMenu() {
 				system("cls");
 				main.printMain();
 			}
+		default:
+			system("cls");
+			main.printMain();
+			break;
 		}
+		
 		if (!isRun) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
 			menu.MovePosition(45, 15);
 			cout << "프로그램을 종료합니다." << endl;
 			break;
 		}
+		
 	}
 
 }
