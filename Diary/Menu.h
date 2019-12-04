@@ -15,7 +15,6 @@ class Menu {
 		Menu(int x, int y); //»ý¼ºÀÚ
 		Menu();
 		void MovePosition(int x, int y);
-		
 		void PrintMenu();
 		void LPrintMenu();
 		int GetSelectedMenu();

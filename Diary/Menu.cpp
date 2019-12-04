@@ -4,6 +4,7 @@ Menu::Menu(int x, int y) {
 	MovePosition(x, y);
 }
 Menu::Menu() {
+	selectedMenu=0;
 }
 void Menu::MovePosition(int x, int y)
 {
