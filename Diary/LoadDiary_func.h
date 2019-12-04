@@ -11,6 +11,7 @@
 #include <vector>
 using namespace std;
 
+
 class LoadDiary_func {
 public:
 	void DeleteDiary(); //일기 삭제하기
