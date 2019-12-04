@@ -12,7 +12,7 @@ void LoadDiary:: SelectMenu() {
 	bool isModifyDiary = FALSE;
 	bool isDeleteDiary = FALSE;
 	bool isBackToMain = FALSE;
-
+	bool chk = FALSE;
 	while (isRun) {
 		int selectedMenu = menu.GetSelectedMenu();
 		switch (selectedMenu)
@@ -41,8 +41,10 @@ void LoadDiary:: SelectMenu() {
 				main.printMain();
 			}
 		default:
-			system("cls");
-			main.printMain();
+			if (!chk) {
+				system("cls");
+				main.printMain();
+			}
 			break;
 		}
 		

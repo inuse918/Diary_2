@@ -3,7 +3,8 @@
 Menu::Menu(int x, int y) {
 	MovePosition(x, y);
 }
-Menu::Menu() {}
+Menu::Menu() {
+}
 void Menu::MovePosition(int x, int y)
 {
 	COORD coord;
@@ -15,7 +16,9 @@ void Menu::MovePosition(int x, int y)
 	);
 }
 void Menu::PrintMenu() {
+	system("cls");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14); // 글씨 색을 바꿈
+	MovePosition(50, 1);
 	cout << "[콘솔 일기장]" << endl;
 
 	MovePosition(45, 3);
@@ -33,7 +36,9 @@ void Menu::PrintMenu() {
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),11);
 	MovePosition(45, 12);
-	cout << "선택할 메뉴를 입력하세요 => " << endl;
+	cout << "선택할 메뉴를 입력하세요" << endl;
+	MovePosition(40, 14);
+	cout<<"(메뉴 이외의 숫자를 입력할 경우 메뉴가 다시 로딩됩니다.) = > " << endl;
 }
 void Menu::LPrintMenu() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
@@ -57,7 +62,7 @@ int Menu::GetSelectedMenu() {
 }
 
 void Menu::RecieveMenu() {
-	MovePosition(75, 12);
+	MovePosition(103, 14);
 	cin >> selectedMenu;
 }
 

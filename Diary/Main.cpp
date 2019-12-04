@@ -9,6 +9,7 @@ void Main::printMain() {
 	bool isPrintHelp = FALSE;
 	bool isWriteDiary = FALSE;
 	bool isLoadDiary = FALSE;
+	bool isTrue = FALSE;
 	menu.PrintMenu();
 	menu.RecieveMenu();
 
@@ -37,6 +38,11 @@ void Main::printMain() {
 		case 4:
 			isRun = FALSE;
 			break;
+		default:
+			if (!isTrue) {
+				printMain();
+				isTrue = TRUE;
+			}
 		}
 		if (!isRun) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 15);
@@ -45,10 +51,11 @@ void Main::printMain() {
 			exit(0);
 		}
 	}
-
 }
+
 int main() 
 {
+	system("cls");
 	Main main = Main();
 	main.printMain();
 }
