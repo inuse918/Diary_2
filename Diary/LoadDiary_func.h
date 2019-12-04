@@ -4,8 +4,8 @@
 #include <fstream>
 #include <conio.h>
 #include <cstdio>
-#define _CRT_SECURE_NO_WARNINGS
 #include "Main.h"
+#include "LoadDiary.h"
 #include <string>
 using namespace std;
 
