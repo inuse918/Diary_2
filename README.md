@@ -1,4 +1,4 @@
-## Diary_2
+## console diary 
 
-c++를 연습합니다.
-콘솔 일기장 입니다.
+language : cpp
+practice cpp
