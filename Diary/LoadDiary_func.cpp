@@ -24,7 +24,6 @@ void LoadDiary_func::DeleteDiary() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 	cout << "일기를 삭제합니다." << endl;
 
-	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 	cout << "삭제한 파일은 되돌릴 수 없습니다. 파일 삭제를 계속 진행하시겠습니까?" << endl;
 	cout << "계속 진행하려면 1, 이전으로 돌아가려면 0을 입력해 주세요=> ";
@@ -37,17 +36,23 @@ void LoadDiary_func::DeleteDiary() {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		cin >> diaryName;
 		diaryName.append(".txt");
-		if (remove(diaryName.c_str())!=0) {
+		input.open(diaryName.c_str(), ios::in | ios::out | ios::ate);
+		if (input.is_open())
+		{
+			input.close();
+		}
+		input.close();
+		if (FileExists(diaryName)==0) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 			cout << "존재하지 않는 파일입니다. 삭제를 실패하였습니다." << endl;
 		}
-		
 		else {
-			remove(diaryName.c_str());
+			input.close();
+			DeleteFile(diaryName.c_str());
+			//remove(diaryName.c_str());
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 			cout << diaryName << "파일이 성공적으로 삭제되었습니다." << endl;
 		}
-		
 		cout << "이전 화면으로 돌아가려면 아무 키나 누르세요." << endl;
 		ch = _getch();
 		if (ch != 0) {
@@ -92,8 +97,7 @@ void LoadDiary_func::ModifyDiary() {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 		cin >> diaryName;
 		diaryName.append(".txt");
-		input.open(diaryName,ios::out);
-		//ifstream file(diaryName);
+		input.open(diaryName);
 		cout << endl << endl << endl << endl;
 		if (FileExists(diaryName) != 0) {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
@@ -121,8 +125,8 @@ void LoadDiary_func::ModifyDiary() {
 				system("cls");
 				main.printMain();
 			}
-		}
-		else {
+		} 
+		else  {
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 			cout << "파일이 존재하지 않습니다." << endl;
 			cout << "아무 키나 누르면 되돌아갑니다." << endl;
@@ -171,12 +175,12 @@ void LoadDiary_func::WatchDiary() {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
 		cout << "파일이 존재하지 않습니다." << endl;
 	}
+	file.close();
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 14);
-	cout << "메인 화면으로 돌아가려면 아무 키나 누르세요." << endl;
+	cout << "메인으로 돌아가려면 아무 키나 누르세요." << endl;
 	ch = _getch();
 	if (ch != 0) {
 		system("cls");
 		main.printMain();
 	}
-
 }

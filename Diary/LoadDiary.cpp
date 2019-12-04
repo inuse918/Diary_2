@@ -58,7 +58,6 @@ void LoadDiary:: SelectMenu() {
 	}
 
 }
-
 void LoadDiary::Load(){
 	system("cls");
 	Main main = Main();
